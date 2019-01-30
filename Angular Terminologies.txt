@@ -1,0 +1,131 @@
+*Transpilation
+
+Browsers don’t support TypeScript. Browsers barely support ES6 JavaScript. So how can we write our code in TypeScript?
+
+We use something called a transpiler which converts from one language to another.
+
+We can write in TypeScript and have a transpiler convert to ES6 or ES5.
+
+
+*Components
+
+The word Component isn’t random. Components are a feature of Angular that let us create a new HTML language and they are how we structure Angular applications.
+
+HTML comes with a bunch of pre-built tags like <input> and <form> which look and behave a certain way. In Angular we create new custom tags with their own look and behaviour.
+
+An Angular application is therefore just a set of custom tags that interact with each other, we call these tags Components.
+
+
+*NgModule
+
+We are using the term module for two different concepts. In JavaScript the term module generally refers to code which exists in a single file. An NgModule is a different concept, it combines code from different files together into one package. An NgModule therefore contains functionality from multiple files a module refers to functionality in a single file.
+
+
+*@NgModule has a few params:
+
+imports
+The other Angular Modules that export material we need in this Angular Module. Almost every application’s root module should import the BrowserModule.
+
+declarations
+The list of components or directives belonging to this module.
+
+bootstrap
+Identifies the root component that Angular should bootstrap when it starts the application.
+
+
+*Classes
+Remember I said that classes are blueprints for objects, or in other words instructions for how to create an object. To actually create an object using* a class we use the new keyword.
+
+
+
+*String Interpolation
+
+The class instance can have properties and we can bind those properties to portions of our template by using string interpolation via the {{ }} syntax.
+
+
+*Structural Directives 
+
+Structural Directives are directives which change the structure of the DOM by adding or removing elements.
+
+
+*Observables is a new primitive type which acts as a blueprint for how we want to create streams, subscribe to them, react to new values, and combine streams together to build new ones.
+
+
+*What’s a Service in Angular 2
+
+Services are a piece of code that are used to perform a specific task, a service can contain a value or function or combinations of both. Services are injected into application using dependency injection mechanism. Services prevent us from writing the same code at multiple sections of our application. The best solution is to write services are inject in application where we need it. Services provide, store, and interact with data, and a communication channel b/w classes. Service is a mechanism used to share the functionality b/w the components.
+
+
+*@Input is used to define an input property to achieve component property binding. @Output is used to define output property to achieve custom event binding.
+
+@Input decorator binds a property within one component (child component) to receive a value from another component (parent component). This is one way communication from parent to child. The component property should be annotated with @Input decorator to act as input property. A component can receive a value from another component using component property binding. Now we will see how to use @Input. It can be annotated at any type of property such as number, string, array or user defined class. To use alias for the binding property name we need to assign an alias name as @Input(alias). 
+
+
+@Output
+@Output decorator binds a property of a component to send data from one component (child component) to calling component (parent component). This is one way communication from child to parent component. @Output binds a property of the type of angular EventEmitter class. This property name becomes custom event name for calling component. @Output decorator can also alias the property name as @Output(alias) and now this alias name will be used in custom event binding in calling component. 
+Find the @Output decorator using aliasing.
+
+@Output('addStudentEvent') 
+addStdEvent = new EventEmitter<Student>(); 
+
+
+
+*Observable is a RxJS API. Observable is a representation of any set of values over any amount of time. All angular Http methods return instance of Observable. Find some of its operators.
+ 
+map: It applies a function to each value emitted by source Observable and returns finally an instance of Observable.
+ 
+catch: It is called when an error is occurred. catch also returns Observable. 
+
+
+
+
+
+
+
+
+
+
+*app.module.ts
+
+-app.module.ts is root module
+in thaT We have mentioned about routes for different components. 
+
+-If you observe 
+const appRoutes: Routes in that we have given various routes for each component
+
+
+
+*app.component.ts
+
+Home and employee tabs we have written within in it by using routerLink
+
+*app.component.html
+
+mentioned  <my-employee></my-employee> directive
+
+*home.component.ts
+
+Just a home page
+And two way binding of color input box
+Injected userPreference service
+used colourPreference object
+
+
+*EmployeeTitlePipe
+created custom pipe used in employeeList.component.html
+
+
+*employeeCount.component.ts
+
+In this we have mentioned input and output decorator  which are used in employeeList.component.html on the top
+
+
+
+import { Http, Response } from "@angular/http";
+
+
+
+
+
+
+
